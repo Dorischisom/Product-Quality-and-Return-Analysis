@@ -27,29 +27,52 @@ This analysis aims to uncover the root causes of these returns by examining prod
 - Develop actionable recommendations for product development and sourcing optimization
 - Enable proactive quality management to reduce operational costs and improve customer satisfaction
 
-[You can find the full technical analysis and code here](  
-[And sql directories here](
+[You can find the full technical analysis and code here](TechTrendsPro/TechTrendsPro.ipynb)
+[And sql directories here](Tech_trend_product_analysis/Tech_trend_product_analysis.docx)
 
-Data Structure Overview
-The analysis utilizes three interconnected datasets representing TechTrend Pro's operational ecosystem:
+## Data Structure Overview
 
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Product Data  │    │   Sales Data    │    │ Feedback Data   │
-│                 │    │                 │    │                 │
-│ • Product ID    │◄─┐ │ • Sale ID       │    │ • Feedback ID   │
-│ • Category      │  └─┤ • Product ID    │    │ • Product ID    │◄─┐
-│ • Attributes    │    │ • Sales Date    │    │ • Return Date   │  │
-│                 │    │ • Sales Volume  │    │ • Return Reason │  │
-│ 200 records     │    │ • Revenue Gen.  │    │ • Feedback Text │  │
-└─────────────────┘    │                 │    │                 │  │
-                       │ 2,000 records   │    │ 1,500 records   │  │
-                       └─────────────────┘    └─────────────────┘  │
-                                                                   │
-                                              ┌─────────────────┘
-                                              │
-                                        Relationship: Many sales
-                                        and returns per product
+### Product Table
+| Column | Data Type | Description |
+|--------|-----------|-------------|
+| Product ID | Integer | Primary key - unique identifier for each product |
+| Product Category | Text | Product classification (Smartphones, Laptops, Accessories) |
+| Product Attributes | Text | Product specifications and quality-related features |
 
+**Records:** 200 entries
+
+---
+
+### Sales Table
+| Column | Data Type | Description |
+|--------|-----------|-------------|
+| Sale ID | Integer | Primary key - unique identifier for each sales transaction |
+| Product ID | Integer | Foreign key - reference to Product Table |
+| Sales Date | Date | Date when the product was sold |
+| Sales Volume | Integer | Number of units sold in the transaction |
+| Revenue Generated | Double | Total revenue generated from the sale in USD |
+
+**Records:** 2,000 entries
+
+---
+
+### Feedback Table
+| Column | Data Type | Description |
+|--------|-----------|-------------|
+| Feedback ID | Integer | Primary key - unique identifier for each feedback entry |
+| Product ID | Integer | Foreign key - reference to Product Table |
+| Return Date | Date | Date when the product was returned |
+| Return Reason | Text | Customer-provided reason for return (5 categories) |
+| Customer Feedback | Text | Additional customer comments about product experience |
+
+**Records:** 1,500 entries
+
+---
+
+### Data Relationships
+- **One-to-Many**: Each product can have multiple sales transactions
+- **One-to-Many**: Each product can have multiple return/feedback entries
+- **Join Key**: Product ID links all three tables
 
 ### Analysis Tools:
 
