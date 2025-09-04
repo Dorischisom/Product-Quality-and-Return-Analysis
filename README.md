@@ -28,6 +28,9 @@ This analysis aims to uncover the root causes of these returns by examining prod
 - Enable proactive quality management to reduce operational costs and improve customer satisfaction
 
 [You can find the full technical analysis and code here](TechTrendsPro/TechTrendsPro.ipynb)
+
+
+
 [And sql directories here](Tech_trend_product_analysis/Tech_trend_product_analysis.docx)
 
 ## Data Structure Overview
