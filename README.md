@@ -88,11 +88,11 @@ This analysis aims to uncover the root causes of these returns by examining prod
 
 #### Overview of Findings
 
-Analysis of 15,121 combined transaction and return records reveals significant quality-related patterns driving return behavior. Statistical analysis confirms a significant relationship between product categories and quality issues **(χ² = 6.56, p = 0.038), indicating that return patterns are not uniformly distributed across TechTrend Pro's product portfolio.
+Analysis of 15,121 combined transaction and return records reveals significant quality-related patterns driving return behavior. Statistical analysis confirms a significant relationship between product categories and quality issues **(χ² = 6.56, p = 0.038)**, indicating that return patterns are not uniformly distributed across TechTrend Pro's product portfolio.
 
 ## Critical Insights:
 
-- **Quality Issues Distribution:** Quality-related returns show statistically significant variation across product categories (χ² = 6.56, p = 0.038)
+- **Quality Issues Distribution:** Quality-related returns show statistically significant variation across product categories **(χ² = 6.56, p = 0.038)**
 - **Primary Return Driver:** "Wrong item received" represents the highest return frequency, followed by quality-related issues
 - **Category Performance:** Accessories show the highest return volume, while laptops demonstrate concerning quality issue rates relative to sales volume
 - **Revenue Impact:** Returns directly affect operational efficiency and customer satisfaction metrics
